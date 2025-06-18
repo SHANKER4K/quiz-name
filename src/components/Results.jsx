@@ -3,7 +3,11 @@ import { UserContext } from "./UserContext";
 
 export default function Results({ element, artwork }) {
   const { name } = useContext(UserContext);
-
+  if (name === "") {
+    window.history.pushState({}, "", "/"); // Change the URL without reloading the page
+    const navEvent = new PopStateEvent("popstate");
+    window.dispatchEvent(navEvent); // Dispatch a navigation event
+  }
   return (
     <div>
       <p>

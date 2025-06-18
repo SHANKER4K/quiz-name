@@ -20,9 +20,17 @@ export default function UserForm() {
   return (
     <form action="" onSubmit={handleSubmit} onChange={handleOnChange}>
       <label htmlFor="name">Name: </label>
-      <input type="text" name="name" id="name" value={inputName} />
-      <br />
-      <button type="submit">Submit</button>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter your name here"
+        required
+        value={inputName}
+      />
+      <button style={{ marginTop: "10px" }} type="submit">
+        Submit
+      </button>
     </form>
   );
 }
